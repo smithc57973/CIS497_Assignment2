@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+* Chris Smith
+* Prototype 2
+* Manages animal spawn rate and location
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,22 +16,16 @@ public class SpawnManager : MonoBehaviour
     private float rightBound = 14;
     private float spawnPosZ = 20;
 
+    public HealthSystem healthsystem;
+
     void Start()
     {
+        //get reference to health system
+        healthsystem = GameObject.FindGameObjectWithTag("HealthSystem").GetComponent<HealthSystem>();
+
         //InvokeRepeating("SpawnRandomPrefab", 2, 1.5f);
         StartCoroutine(SpawnCoroutine());
     }
-    /*
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            SpawnRandomPrefab();
-        }
-       
-    }
-    */
 
     void SpawnRandomPrefab()
     {
@@ -45,7 +45,7 @@ public class SpawnManager : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
         //spawn at random intervals
-        while (true)
+        while (!healthsystem.gameOver)
         {
             SpawnRandomPrefab();
             float randomDelay = Random.Range(0.8f, 3.0f);

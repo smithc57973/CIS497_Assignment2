@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+* Chris Smith
+* Prototype 2
+* Allows player to move horizontally within bounds
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

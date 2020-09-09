@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+* Chris Smith
+* Prototype 2
+* Manages food and animal collision
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

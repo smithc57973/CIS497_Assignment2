@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+* Chris Smith
+* Prototype 2
+* Allows animals to move forward
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
